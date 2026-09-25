@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <!-- Elegant Gold Geometric Frame -->
+  <polygon points="250,20 480,250 250,480 20,250" stroke="#d4af37" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <polygon points="250,32 468,250 250,468 32,250" stroke="#d4af37" stroke-width="0.8" fill="none" opacity="0.4"/>
+  
+  <!-- Outer Gold Ring -->
+  <circle cx="250" cy="250" r="210" stroke="#d4af37" stroke-width="1" stroke-dasharray="4,4" fill="none" opacity="0.5"/>
+
+  <!-- Floral clusters on bottom left -->
+  <g transform="translate(40, 270) scale(0.9)">
+    <path d="M40,20 C60,-10 110,5 100,45 C90,85 30,70 40,20 Z" fill="#e8b4b8" opacity="0.85"/>
+    <path d="M60,35 C80,10 120,25 110,60 C100,90 55,80 60,35 Z" fill="#df9aa0" opacity="0.95"/>
+    <circle cx="90" cy="52" r="10" fill="#a45059"/>
+    <path d="M100,45 C150,20 180,50 160,75 C135,100 110,65 100,45 Z" fill="#8a9a86" opacity="0.85"/>
+    <path d="M30,15 C-10,40 10,80 45,65" fill="#9fad9b" opacity="0.8"/>
+  </g>
+
+  <!-- Floral clusters on top right -->
+  <g transform="translate(290, 40) scale(0.85)">
+    <path d="M40,20 C60,-10 110,5 100,45 C90,85 30,70 40,20 Z" fill="#e8b4b8" opacity="0.85"/>
+    <path d="M60,35 C80,10 120,25 110,60 C100,90 55,80 60,35 Z" fill="#df9aa0" opacity="0.95"/>
+    <circle cx="90" cy="52" r="10" fill="#a45059"/>
+    <path d="M100,45 C150,20 180,50 160,75 C135,100 110,65 100,45 Z" fill="#8a9a86" opacity="0.85"/>
+    <path d="M30,15 C-10,40 10,80 45,65" fill="#9fad9b" opacity="0.8"/>
+  </g>
+</svg>

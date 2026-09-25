@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Primary Meta Tags -->
+  <title>Undangan Pernikahan Warsadi & Della Nur Indah Sari - Arctic Rose</title>
+  <meta name="title" content="The Wedding of Warsadi & Della Nur Indah Sari">
+  <meta name="description"
+    content="Kami mengundang Anda untuk merayakan momen bahagia pernikahan Warsadi & Della Nur Indah Sari.">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Wedding of Warsadi & Della Nur Indah Sari">
+  <meta property="og:description"
+    content="Buka undangan pernikahan eksklusif Warsadi & Della Nur Indah Sari (Tema Arctic Rose).">
+  <meta property="og:image" content="assets/images/src.jpeg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Rouge+Script&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Animate On Scroll (AOS) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="overflow: hidden;">
+
+  <!-- Canvas for Floating Rose Petals -->
+  <canvas id="petalCanvas"></canvas>
+
+  <!-- =========================================================================
+       COVER / OPENING OVERLAY (SPLASH SCREEN)
+       ========================================================================= -->
+  <div id="coverOverlay" class="cover-overlay">
+    <div class="cover-container">
+      <img src="assets/images/florals/rose-corner-top.svg" alt="Floral Top" class="cover-floral-top">
+      <img src="assets/images/florals/rose-corner-bottom.svg" alt="Floral Bottom" class="cover-floral-bottom">
+
+      <div class="cover-header">
+        <p class="cover-tagline">The Wedding Of</p>
+        <h1 class="cover-couple-name">Warsadi & Della</h1>
+        <p class="font-subheading" style="font-size: 0.85rem; color: var(--color-primary);">Rabu, 28 Oktober 2026</p>
+      </div>
+
+      <div class="cover-frame-box">
+        <div class="cover-photo-wrapper">
+          <img src="assets/images/src.jpeg" alt="Warsadi & Della">
+        </div>
+      </div>
+
+      <div class="cover-footer">
+        <div class="guest-card">
+          <div class="guest-title">Kepada Yth:</div>
+          <div id="guestName" class="guest-name">Tamu Undangan</div>
+          <small class="guest-note">*Mohon maaf jika ada kesalahan penulisan nama/gelar</small>
+        </div>
+
+        <button id="btnOpenInvitation" class="btn-open-invitation">
+          <i class="fa-solid fa-envelope-open-text"></i>
+          <span>Buka Undangan</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Music Element -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music/wedding-song.mp3" type="audio/mpeg">
+    <source
+      src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-piano-112191.mp3"
+      type="audio/mpeg">
+  </audio>
+
+  <!-- Floating Action Buttons -->
+  <div class="floating-widgets">
+    <button id="btnMusicToggle" class="btn-floating btn-music" title="Putar / Jeda Musik">
+      <i class="fa-solid fa-compact-disc"></i>
+    </button>
+    <button id="btnOpenQr" class="btn-floating" title="QR Code Tamu">
+      <i class="fa-solid fa-qrcode"></i>
+    </button>
+  </div>
+
+  <!-- =========================================================================
+       MAIN PAGE WRAPPER
+       ========================================================================= -->
+  <div class="page-wrapper">
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+      <img src="assets/images/florals/rose-corner-top.svg" alt="Floral" class="hero-floral-top">
+      <img src="assets/images/florals/rose-corner-bottom.svg" alt="Floral" class="hero-floral-left">
+
+      <div data-aos="fade-down" data-aos-duration="1000">
+        <p class="hero-sub">Walimatul 'Ursy</p>
+        <h1 class="hero-title">Warsadi & Della</h1>
+      </div>
+
+      <div class="hero-arch-frame" data-aos="zoom-in" data-aos-duration="1200">
+        <img src="assets/images/src.jpeg" alt="Foto Pengantin">
+      </div>
+
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <div class="hero-date-badge">
+          <p><i class="fa-regular fa-calendar-heart" style="color: var(--color-primary); margin-right: 6px;"></i> 28 Okt 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE / AYAT SUCI -->
+    <section id="quote" class="quote-section">
+      <div class="quote-box" data-aos="fade-up">
+        <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <p class="quote-arabic">
+          وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم
+          مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+        </p>
+        <p class="quote-translation">
+          "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
+          sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
+          sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."
+        </p>
+        <span class="quote-source">— QS. Ar-Rum: 21 —</span>
+      </div>
+    </section>
+
+
+
+    <!-- EVENT DETAILS & COUNTDOWN -->
+    <section id="event" class="event-section">
+      <div class="section-title-wrap" data-aos="fade-up">
+        <span class="section-tag">Save The Date</span>
+        <h2 class="section-title">Rangkaian Acara</h2>
+        <img src="assets/images/florals/divider-ornament.svg" alt="Divider" class="section-divider">
+      </div>
+
+      <!-- COUNTDOWN TIMER -->
+      <div class="countdown-container" data-aos="zoom-in">
+        <div class="countdown-title">MENGHITUNG HARI MENUJU BAHAGIA</div>
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <span id="days" class="countdown-value">00</span>
+            <span class="countdown-label">Hari</span>
+          </div>
+          <div class="countdown-item">
+            <span id="hours" class="countdown-value">00</span>
+            <span class="countdown-label">Jam</span>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes" class="countdown-value">00</span>
+            <span class="countdown-label">Menit</span>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds" class="countdown-value">00</span>
+            <span class="countdown-label">Detik</span>
+          </div>
+        </div>
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Warsadi+%26+Della&dates=20261028T080000Z/20261028T140000Z&details=Pernikahan+Warsadi+%26+Della&location=Jl.+Raya+Badak,+Ds.+Mundakjaya,+Cikedung,+Indramayu"
+          target="_blank" rel="noopener noreferrer" class="btn-calendar">
+          <i class="fa-regular fa-calendar-plus"></i> Simpan ke Google Calendar
+        </a>
+      </div>
+
+      <div class="event-cards-wrap">
+        <!-- Akad Nikah Card -->
+        <div class="event-card" data-aos="fade-up">
+          <div class="event-icon">
+            <i class="fa-solid fa-ring"></i>
+          </div>
+          <h3 class="event-name">Akad Nikah</h3>
+          <div class="event-info-item">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span class="info-main">Rabu, 28 Oktober 2026</span>
+            <span class="info-sub">Pukul 08.00 - 10.00 WIB</span>
+          </div>
+          <div class="event-info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="event-venue-name">Kediaman Mempelai</span>
+            <span class="event-address">Jl. Raya Badak, Rt.2/Rw.3, Ds. Mundakjaya, Kec. Cikedung, Kab. Indramayu, Jawa
+              Barat 45262</span>
+          </div>
+          <a href="https://maps.app.goo.gl/S64VHTaosYU5ouPJ9" target="_blank" rel="noopener noreferrer" class="btn-map">
+            <i class="fa-solid fa-map-location-dot"></i> Buka Google Maps
+          </a>
+        </div>
+
+        <!-- Resepsi Card -->
+        <div class="event-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="event-icon">
+            <i class="fa-solid fa-champagne-glasses"></i>
+          </div>
+          <h3 class="event-name">Resepsi Pernikahan</h3>
+          <div class="event-info-item">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span class="info-main">Rabu, 28 Oktober 2026</span>
+            <span class="info-sub">Sesi 1: 11.00 - 13.00 WIB<br>Sesi 2: 13.00 - 15.00 WIB</span>
+          </div>
+          <div class="event-info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="event-venue-name">Kediaman Mempelai</span>
+            <span class="event-address">Jl. Raya Badak, Rt.2/Rw.3, Ds. Mundakjaya, Kec. Cikedung, Kab. Indramayu, Jawa
+              Barat 45262</span>
+          </div>
+          <a href="https://maps.app.goo.gl/S64VHTaosYU5ouPJ9" target="_blank" rel="noopener noreferrer" class="btn-map">
+            <i class="fa-solid fa-map-location-dot"></i> Buka Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY PHOTO GRID -->
+    <section id="gallery" class="gallery-section">
+      <div class="section-title-wrap" data-aos="fade-up">
+        <span class="section-tag">Moments</span>
+        <h2 class="section-title">Galeri Bahagia</h2>
+        <img src="assets/images/florals/divider-ornament.svg" alt="Divider" class="section-divider">
+      </div>
+
+      <div class="gallery-grid" data-aos="fade-up">
+        <div class="gallery-item">
+          <img src="assets/images/src.jpeg" alt="Prewedding 1">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/src1.jpeg" alt="Prewedding 2">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/src2.jpeg" alt="Prewedding 3">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/src.jpeg" alt="Prewedding 4">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/src2.jpeg" alt="Prewedding 5">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/src1.jpeg" alt="Prewedding 6">
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION / GOOGLE MAPS SECTION -->
+    <section id="location" class="location-section">
+      <div class="section-title-wrap" data-aos="fade-up">
+        <span class="section-tag">Location</span>
+        <h2 class="section-title">Peta &amp; Lokasi Acara</h2>
+        <img src="assets/images/florals/divider-ornament.svg" alt="Divider" class="section-divider">
+        <p style="font-size: 0.86rem; color: var(--color-text-muted); margin-top: 10px;">
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir untuk memberikan doa restu di
+          hari bahagia kami.
+        </p>
+      </div>
+
+      <div class="location-card" data-aos="fade-up">
+        <div class="map-embed-wrapper">
+          <iframe src="https://maps.google.com/maps?q=-6.4638915,108.1673126&hl=id&z=16&output=embed" width="100%"
+            height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Pernikahan Warsadi & Della">
+          </iframe>
+        </div>
+
+        <div class="location-details">
+          <div class="location-venue-header">
+            <i class="fa-solid fa-map-location-dot location-venue-icon"></i>
+            <div>
+              <h3 class="location-venue-title">Kediaman Mempelai</h3>
+              <p class="location-address">
+                Jl. Raya Badak, Rt.2/Rw.3, Ds. Mundakjaya, Kec. Cikedung, Kab. Indramayu, Jawa Barat 45262
+              </p>
+            </div>
+          </div>
+
+          <div class="location-action-btns">
+            <a href="https://maps.app.goo.gl/S64VHTaosYU5ouPJ9" target="_blank" rel="noopener noreferrer"
+              class="btn-location-primary">
+              <i class="fa-solid fa-diamond-turn-right"></i> Buka Google Maps
+            </a>
+            <button class="btn-copy btn-location-secondary"
+              data-copy="Jl. Raya Badak, Rt.2/Rw.3, Ds. Mundakjaya, Kec. Cikedung, Kab. Indramayu, Jawa Barat 45262">
+              <i class="fa-regular fa-copy"></i> Salin Alamat
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP & BUKU TAMU / DOA -->
+    <section id="rsvp" class="rsvp-section">
+      <div class="section-title-wrap" data-aos="fade-up">
+        <span class="section-tag">Wishes & RSVP</span>
+        <h2 class="section-title">Ucapan &amp; Konfirmasi</h2>
+        <img src="assets/images/florals/divider-ornament.svg" alt="Divider" class="section-divider">
+        <p style="font-size: 0.86rem; color: var(--color-text-muted); margin-top: 10px;">
+          Berikan doa restu dan konfirmasi kehadiran Anda untuk menyempurnakan hari bahagia kami.
+        </p>
+      </div>
+
+      <!-- RSVP FORM -->
+      <div class="rsvp-form-card" data-aos="fade-up">
+        <form id="rsvpForm">
+          <div class="form-group">
+            <label for="rsvpName" class="form-label">Nama Anda</label>
+            <input type="text" id="rsvpName" class="form-control" placeholder="Tuliskan nama lengkap..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="rsvpAttendance" class="form-label">Konfirmasi Kehadiran</label>
+            <select id="rsvpAttendance" class="form-control">
+              <option value="hadir">Ya, Saya akan Hadir</option>
+              <option value="tidak-hadir">Maaf, Tidak Bisa Hadir</option>
+              <option value="ragu">Masih Ragu / Belum Pasti</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="rsvpMessage" class="form-label">Ucapan & Doa Restu</label>
+            <textarea id="rsvpMessage" class="form-control"
+              placeholder="Tuliskan doa dan harapan terbaik untuk kedua mempelai..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-rsvp">
+            <i class="fa-solid fa-paper-plane"></i> Kirim Ucapan
+          </button>
+        </form>
+      </div>
+
+      <!-- WISHES GUESTBOOK FEED -->
+      <div class="wishes-feed" id="wishesList" data-aos="fade-up">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- PROTOKOL KESEHATAN & DRESSCODE -->
+    <section id="prokes" class="prokes-section" style="padding-top: 20px;">
+      <div class="section-title-wrap" data-aos="fade-up">
+        <span class="section-tag">Guidelines</span>
+        <h3 class="section-title" style="font-size: 1.6rem;">Panduan Acara</h3>
+        <img src="assets/images/florals/divider-ornament.svg" alt="Divider" class="section-divider">
+      </div>
+
+      <div class="prokes-grid" data-aos="fade-up">
+        <div class="prokes-item">
+          <div class="prokes-icon">😷</div>
+          <div class="prokes-text">Gunakan Masker</div>
+        </div>
+        <div class="prokes-item">
+          <div class="prokes-icon">🧼</div>
+          <div class="prokes-text">Cuci Tangan</div>
+        </div>
+        <div class="prokes-item">
+          <div class="prokes-icon">🤝</div>
+          <div class="prokes-text">Hindari Kontak</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING & FOOTER -->
+    <footer id="closing" class="footer-section">
+      <div data-aos="fade-up">
+        <p class="footer-quote">
+          "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk
+          memberikan doa restu kepada kami."
+        </p>
+        <p class="font-subheading"
+          style="font-size: 0.8rem; color: var(--color-primary); letter-spacing: 2px; margin-bottom: 10px;">KAMI YANG
+          BERBAHAGIA</p>
+        <h2 class="footer-couple-name">Warsadi &amp; Della Nur Indah Sari</h2>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- =========================================================================
+       BOTTOM FLOATING NAVIGATION
+       ========================================================================= -->
+  <nav class="bottom-nav">
+    <ul>
+      <li><a href="#home" class="active"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+      <li><a href="#event"><i class="fa-solid fa-calendar-days"></i><span>Acara</span></a></li>
+      <li><a href="#gallery"><i class="fa-solid fa-images"></i><span>Galeri</span></a></li>
+      <li><a href="#location"><i class="fa-solid fa-map-location-dot"></i><span>Lokasi</span></a></li>
+      <li><a href="#rsvp"><i class="fa-solid fa-comments"></i><span>Ucapan</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- =========================================================================
+       MODAL: QR CODE TAMU
+       ========================================================================= -->
+  <div id="qrModal" class="modal-overlay">
+    <div class="modal-content-box">
+      <button id="btnCloseQr" class="btn-close-modal"><i class="fa-solid fa-xmark"></i></button>
+      <h3 style="font-family: var(--font-heading-serif); color: var(--color-primary-dark); margin-bottom: 6px;">QR Code
+        Tamu</h3>
+      <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 18px;">
+        Tunjukkan barcode ini kepada petugas buku tamu saat hadir di lokasi resepsi.
+      </p>
+      <div
+        style="background: #f8fafc; padding: 14px; border-radius: 12px; display: inline-block; border: 1px solid #e2e8f0; margin-bottom: 14px;">
+        <img src="assets/images/qris.jpg" alt="QR Code Tamu" style="width: 180px; height: 180px; object-fit: contain;">
+      </div>
+      <p style="font-size: 0.78rem; color: var(--color-text-light);">ID Check-in: #AR-2026-VIP</p>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL: GALLERY LIGHTBOX
+       ========================================================================= -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <button id="lightboxClose" class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+    <button id="lightboxPrev" class="lightbox-nav-btn lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="lightbox-img-wrap">
+      <img id="lightboxImg" src="" alt="Preview Foto">
+    </div>
+    <button id="lightboxNext" class="lightbox-nav-btn lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotice" class="toast-notice">
+    <i class="fa-solid fa-circle-check" style="color: #4ade80;"></i>
+    <span class="toast-text">Berhasil disalin!</span>
+  </div>
+
+  <!-- AOS (Animate on Scroll) JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 900,
+      offset: 50
+    });
+  </script>
+
+  <!-- Main JavaScript Logic -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

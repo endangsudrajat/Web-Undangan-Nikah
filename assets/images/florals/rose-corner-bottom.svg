@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none">
+  <g transform="rotate(180 150 100)" opacity="0.85">
+    <!-- Main Rose Petals -->
+    <path d="M40,20 C60,-10 110,5 100,45 C90,85 30,70 40,20 Z" fill="#e8b4b8" opacity="0.6"/>
+    <path d="M60,35 C80,10 120,25 110,60 C100,90 55,80 60,35 Z" fill="#df9aa0" opacity="0.8"/>
+    <path d="M75,45 C88,28 115,38 108,62 C100,80 70,75 75,45 Z" fill="#c97a82" opacity="0.9"/>
+    <circle cx="90" cy="52" r="10" fill="#a45059"/>
+    
+    <!-- Leaves and foliage -->
+    <path d="M100,45 C150,20 180,50 160,75 C135,100 110,65 100,45 Z" fill="#8a9a86" opacity="0.7"/>
+    <path d="M105,48 C140,25 165,50 150,70" stroke="#5c6f58" stroke-width="1.5" fill="none"/>
+    <path d="M45,70 C30,120 70,145 95,125 C115,105 80,80 45,70 Z" fill="#9fad9b" opacity="0.75"/>
+    <path d="M50,75 C38,115 72,135 90,120" stroke="#5c6f58" stroke-width="1.5" fill="none"/>
+    <path d="M15,35 C-5,65 10,100 35,90 C55,80 40,45 15,35 Z" fill="#b5c4b1" opacity="0.6"/>
+    
+    <!-- Secondary Rose Bud -->
+    <path d="M140,75 C155,55 185,65 180,90 C175,110 145,105 140,75 Z" fill="#eed2d5" opacity="0.85"/>
+    <path d="M150,82 C160,68 180,75 175,92 C170,105 150,100 150,82 Z" fill="#df9aa0" opacity="0.95"/>
+    <circle cx="162" cy="87" r="6" fill="#c97a82"/>
+    
+    <!-- Delicate gold vines and berries -->
+    <path d="M10,10 Q80,30 140,20 T240,45" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.85"/>
+    <circle cx="70" cy="22" r="3.5" fill="#d4af37"/>
+    <circle cx="130" cy="21" r="3" fill="#d4af37"/>
+    <circle cx="180" cy="28" r="4" fill="#d4af37"/>
+    <circle cx="220" cy="40" r="3" fill="#d4af37"/>
+    <circle cx="30" cy="115" r="3" fill="#d4af37"/>
+    <circle cx="45" cy="140" r="2.5" fill="#d4af37"/>
+
+    <!-- Small decorative blossoms -->
+    <circle cx="210" cy="65" r="7" fill="#fff" opacity="0.85"/>
+    <circle cx="210" cy="65" r="3" fill="#d4af37"/>
+    <circle cx="120" cy="120" r="6" fill="#fff" opacity="0.85"/>
+    <circle cx="120" cy="120" r="2.5" fill="#d4af37"/>
+  </g>
+</svg>
